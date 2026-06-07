@@ -15,7 +15,7 @@ const Page = () => {
   return (
     <main className="relative min-h-screen max-h-screen">
       <Image
-        src="/images/heroBG.jpg"
+        src="/images/hero/heroBG.jpg"
         alt=""
         fill
         priority

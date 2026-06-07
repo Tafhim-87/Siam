@@ -45,7 +45,7 @@ export default function Hero() {
         {/* Right Image */}
         <div className="w-full lg:w-auto flex justify-center lg:justify-end items-end shrink-0 mt-[clamp(4rem,6vw,10rem)]">
           <Image
-            src="/images/heroc.png"
+            src="/images/hero/heroc.png"
             alt="Hero Image"
             width={877}
             height={844}
