@@ -1,14 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
+import Navbar from '@/components/layout/Navbar';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const britti = localFont({
+  src: [
+    {
+      path: './fonts/BrittiSansTrial-Light-BF6757bfd494951.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/BrittiSansTrial-Regular-BF6757bfd47ffbf.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/BrittiSansTrial-Semibold-BF6757bfd443a8a.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    // Add others (Italic, Bold) following the same pattern
+  ],
+  variable: '--font-britti',
 });
 
 export const metadata = {
@@ -20,9 +33,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${britti.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* Applying britti.className here ensures it's the default font */}
+      <body className={`${britti.className} min-h-full flex flex-col`}>
+        {/* <Navbar /> */}
+        {children}
+      </body>
     </html>
   );
 }
